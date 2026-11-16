@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexora Technologies | Web Development, Cybersecurity and AI in Nairobi</title>
+<meta name="description" content="Nexora Technologies is a Nairobi-based technology company building fast web platforms, defending businesses against cyber threats and delivering practical AI solutions across East Africa.">
+<meta name="keywords" content="web development Kenya, cybersecurity Nairobi, AI solutions Africa, Nexora Technologies">
+<meta property="og:title" content="Nexora Technologies | Build. Secure. Automate.">
+<meta property="og:description" content="Web development, cybersecurity and AI solutions for ambitious African businesses.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#060d1f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060d1f;--bg2:#0a1530;--panel:#0d1b3d;--line:#1b2f5e;--text:#e8eefc;--mut:#93a3c7;--blue:#2d7bff;--cyan:#38d6ff;--ok:#2ee6a6;--err:#ff6b81;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Sora','DM Sans',system-ui,sans-serif;line-height:1.15;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1160px,92%);margin:0 auto}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;font:700 15px 'DM Sans',sans-serif;padding:14px 26px;border-radius:12px;color:#fff;background:linear-gradient(135deg,var(--blue),#1a5de0);box-shadow:0 8px 28px -8px rgba(45,123,255,.8);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(45,123,255,.9)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text)}
+.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.solid{background:rgba(6,13,31,.88);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px 'Sora',sans-serif;letter-spacing:-.03em}
+.logo svg{width:34px;height:34px}
+.menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+.menu a.lnk{color:var(--mut);font-weight:500;font-size:15px;transition:color .2s;position:relative;padding:6px 0}
+.menu a.lnk:hover,.menu a.lnk.on{color:#fff}
+.menu a.lnk.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--blue);border-radius:2px}
+.menu .btn{padding:10px 20px;font-size:14px}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;width:44px;height:44px;border-radius:10px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:#fff;margin:4px auto;transition:.25s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(900px 500px at 80% 20%,rgba(45,123,255,.22),transparent 60%),var(--bg)}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.7}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(13,27,61,.7);padding:6px 14px;border-radius:99px;color:var(--mut);font-size:14px;margin-bottom:22px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(46,230,166,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(46,230,166,0)}100%{box-shadow:0 0 0 0 rgba(46,230,166,0)}}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:800}
+.grad{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:var(--mut);font-size:1.15rem;max-width:34em;margin:22px 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.term{background:rgba(8,17,40,.92);border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 70px -30px rgba(45,123,255,.55);overflow:hidden;font:13.5px/1.8 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center;color:var(--mut)}
+.term .bar b{width:10px;height:10px;border-radius:50%;background:#26407a}
+.term .bar span{margin-left:8px;font-size:12px}
+.term .body{padding:18px 20px;min-height:250px;color:#b9c8ee}
+.term .ok{color:var(--ok)}.term .bl{color:var(--cyan)}.term .wn{color:#ffc857}
+.caret{display:inline-block;width:8px;height:15px;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+/* headings */
+.sh{max-width:640px;margin-bottom:52px}
+.sh h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700}
+.sh p{color:var(--mut);margin:14px 0 0;font-size:1.05rem}
+/* about */
+.about{background:var(--bg2);border-block:1px solid var(--line)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ag p{color:var(--mut)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+.stat strong{display:block;font:700 2rem 'Sora',sans-serif;color:#fff}
+.stat span{color:var(--mut);font-size:.95rem}
+/* services */
+.svc{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+.tabs{display:flex;flex-direction:column;gap:12px}
+.tab{text-align:left;background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:16px;padding:20px 22px;cursor:pointer;font:inherit;transition:.25s;display:flex;gap:16px;align-items:center}
+.tab svg{width:30px;height:30px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tab strong{display:block;font:700 1.1rem 'Sora',sans-serif;color:inherit}
+.tab small{font-size:.9rem}
+.tab:hover{border-color:#2c4a8f;color:#fff}
+.tab[aria-selected=true]{background:linear-gradient(135deg,rgba(45,123,255,.22),rgba(56,214,255,.08));border-color:var(--blue);color:#fff}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:38px;min-height:340px}
+.panel[hidden]{display:none}
+.panel h3{font-size:1.6rem;margin-bottom:12px}
+.panel p{color:var(--mut);margin:0 0 22px}
+.panel ul{list-style:none;padding:0;margin:0 0 26px;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.panel li{padding-left:26px;position:relative}
+.panel li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:rotate(-45deg) translateY(-50%)}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+/* why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.why div{padding:34px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0;background:linear-gradient(180deg,rgba(13,27,61,.5),transparent)}
+.why h3{font-size:1.15rem;margin-bottom:10px}
+.why p{margin:0;color:var(--mut);font-size:.97rem}
+/* contact */
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.cg{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px}
+.info p{color:var(--mut)}
+.info dl{margin:28px 0 0;display:grid;gap:18px}
+.info dt{font-weight:700}
+.info dd{margin:0;color:var(--mut)}
+form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px;display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-weight:500;font-size:.93rem;margin-bottom:7px}
+input,select,textarea{width:100%;background:#081128;border:1px solid var(--line);color:var(--text);padding:13px 14px;border-radius:10px;font:inherit;transition:border-color .2s,box-shadow .2s}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(45,123,255,.25)}
+.f.bad input,.f.bad select,.f.bad textarea{border-color:var(--err)}
+.err{color:var(--err);font-size:.85rem;margin-top:6px;min-height:1.2em}
+.cnt{float:right;color:var(--mut);font-size:.8rem}
+.done{display:none;text-align:center;padding:30px 10px}
+.done.show{display:block}
+.done h3{color:var(--ok);margin-bottom:8px}
+/* footer */
+footer{padding:64px 0 28px;border-top:1px solid var(--line)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer p,footer li a{color:var(--mut);font-size:.95rem}
+footer h4{margin:0 0 14px;font:700 1rem 'Sora',sans-serif}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer li a:hover{color:var(--cyan)}
+.soc{display:flex;gap:10px;margin-top:18px}
+.soc a{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--mut);transition:.2s}
+.soc a:hover{color:#fff;border-color:var(--blue);background:rgba(45,123,255,.18);transform:translateY(-2px)}
+.soc svg{width:18px;height:18px;fill:currentColor}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mut);font-size:.88rem}
+#top{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;cursor:pointer;opacity:0;pointer-events:none;transition:.25s;z-index:40;font-size:18px}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{background:var(--blue)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--panel);border:1px solid var(--ok);padding:14px 22px;border-radius:12px;z-index:80;transition:transform .35s}
+.toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ section{padding:72px 0}
+ .hero .wrap,.ag,.svc,.cg{grid-template-columns:1fr}
+ .fg{grid-template-columns:1fr 1fr}
+ .burger{display:block}
+ .menu{position:fixed;top:calc(72px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(6,13,31,.97);border-bottom:1px solid var(--line);padding:10px 4% 22px;transform:translateY(-130%);transition:transform .3s;max-height:calc(100vh - 72px);overflow:auto}
+ .menu.open{transform:none}
+ .menu li{border-bottom:1px solid var(--line)}
+ .menu a.lnk{display:block;padding:14px 0}
+ .menu li:last-child{border:0;padding-top:16px}
+ .menu .btn{width:100%;justify-content:center}
+}
+@media(max-width:560px){.row,.panel ul{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.panel{padding:26px}form{padding:24px}.stats{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="hdr">
+ <div class="wrap nav">
+  <a href="#home" class="logo" aria-label="Nexora Technologies home">
+   <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2d7bff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M11 29V11l18 18V11" fill="none" stroke="#06112b" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   Nexora
+  </a>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <ul class="menu" id="menu">
+   <li><a class="lnk" href="#home">Home</a></li>
+   <li><a class="lnk" href="#about">About</a></li>
+   <li><a class="lnk" href="#services">Services</a></li>
+   <li><a class="lnk" href="#why">Why Nexora</a></li>
+   <li><a class="lnk" href="#contact">Contact</a></li>
+   <li><a class="btn" href="#contact">Get a quote</a></li>
+  </ul>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <canvas id="net" aria-hidden="true"></canvas>
+ <div class="wrap">
+  <div>
+   <div class="pill"><i></i>Proudly built in Nairobi, Kenya</div>
+   <h1>Technology that grows your business and guards it <span class="grad">while it does</span></h1>
+   <p class="lead">Nexora designs fast web platforms, defends them against real-world attacks and adds AI that saves your team hours every week. One partner, from first idea to 24/7 protection.</p>
+   <div class="cta">
+    <a class="btn" href="#contact" id="start">Get started</a>
+    <a class="btn ghost" href="#services">Explore our services</a>
+   </div>
+  </div>
+  <div class="term" role="img" aria-label="Animated terminal showing a Nexora project launching and a security scan passing">
+   <div class="bar"><b></b><b></b><b></b><span>nexora-deploy</span></div>
+   <div class="body" id="tbody"></div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap ag">
+  <div class="rv">
+   <div class="sh" style="margin-bottom:24px"><h2>An engineering team that treats your systems like its own</h2></div>
+   <p>Founded in Nairobi in 2017, Nexora Technologies helps banks, SACCOs, logistics firms and growing startups across East Africa build software they can rely on.</p>
+   <p>We pair senior engineers with security specialists and data scientists, so what we ship is quick to use, hard to break and ready for mobile-money, low-bandwidth and high-growth realities.</p>
+   <a class="btn ghost" href="#services" style="margin-top:10px">See what we build</a>
+  </div>
+  <div class="stats rv">
+   <div class="stat"><strong data-n="240">0</strong><span>Projects delivered</span></div>
+   <div class="stat"><strong data-n="60">0</strong><span>Engineers and analysts</span></div>
+   <div class="stat"><strong data-n="12">0</strong><span>Countries served</span></div>
+   <div class="stat"><strong data-n="99.9" data-d="1">0</strong><span>Percent uptime on managed systems</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="sh rv"><h2>Services built around what you need to achieve</h2><p>Choose a service to see how we work and what you get.</p></div>
+  <div class="svc rv">
+   <div class="tabs" role="tablist" aria-label="Services">
+    <button class="tab" role="tab" id="t0" aria-selected="true" aria-controls="p0"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg><span><strong>Web development</strong><small>Sites, portals and apps</small></span></button>
+    <button class="tab" role="tab" id="t1" aria-selected="false" aria-controls="p1"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><strong>Cybersecurity</strong><small>Testing, monitoring, response</small></span></button>
+    <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span><strong>AI solutions</strong><small>Automation and insight</small></span></button>
+   </div>
+   <div>
+    <div class="panel fade" role="tabpanel" id="p0" aria-labelledby="t0">
+     <h3>Web platforms that load fast on any connection</h3>
+     <p>From company websites to M-Pesa-integrated e-commerce and customer portals, we build responsive, accessible products tuned for East African networks and devices.</p>
+     <ul><li>Custom web apps</li><li>E-commerce and payments</li><li>Progressive web apps</li><li>API and system integration</li></ul>
+     <a class="btn" href="#contact" data-svc="Web development">Plan my web project</a>
+    </div>
+    <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
+     <h3>Security that finds the gaps before attackers do</h3>
+     <p>Our team runs penetration tests, monitors your systems around the clock and helps you meet Kenya’s Data Protection Act and industry compliance requirements.</p>
+     <ul><li>Penetration testing</li><li>24/7 threat monitoring</li><li>Incident response</li><li>Staff phishing training</li></ul>
+     <a class="btn" href="#contact" data-svc="Cybersecurity">Book a security review</a>
+    </div>
+    <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+     <h3>Practical AI that removes repetitive work</h3>
+     <p>We build chatbots in English and Kiswahili, document processing, demand forecasting and fraud detection, trained on your data and deployed securely.</p>
+     <ul><li>Customer support assistants</li><li>Document and form automation</li><li>Forecasting and analytics</li><li>Fraud and anomaly detection</li></ul>
+     <a class="btn" href="#contact" data-svc="AI solutions">Discuss an AI idea</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="why" style="padding-top:20px">
+ <div class="wrap">
+  <div class="sh rv"><h2>Why companies choose Nexora</h2><p>Four commitments we hold ourselves to on every project.</p></div>
+  <div class="why rv">
+   <div><h3>Security from day one</h3><p>Every build is threat-modelled and tested before launch, not patched after.</p></div>
+   <div><h3>Local insight, global standards</h3><p>We understand mobile money, regional regulation and real network conditions.</p></div>
+   <div><h3>Clear delivery, no surprises</h3><p>Fixed scopes, weekly demos and one named lead who answers your calls.</p></div>
+   <div><h3>Support that stays</h3><p>Managed hosting, monitoring and a response time measured in minutes.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap cg">
+  <div class="info rv">
+   <div class="sh" style="margin-bottom:20px"><h2>Tell us what you’re building</h2></div>
+   <p>Share a few details and a senior member of our team will reply within one working day with next steps.</p>
+   <dl>
+    <div><dt>Visit</dt><dd>Nexora House, Westlands, Nairobi, Kenya</dd></div>
+    <div><dt>Email</dt><dd><a href="mailto:hello@nexora.co.ke">hello@nexora.co.ke</a></dd></div>
+    <div><dt>Call</dt><dd><a href="tel:+254700000000">+254 700 000 000</a></dd></div>
+    <div><dt>Hours</dt><dd>Monday to Friday, 8:00 am to 6:00 pm EAT</dd></div>
+   </dl>
+  </div>
+  <div class="rv">
+   <form id="cf" novalidate aria-label="Contact form">
+    <div class="row">
+     <div class="f"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" placeholder="Wanjiru Kamau"><div class="err" aria-live="polite"></div></div>
+     <div class="f"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.co.ke"><div class="err" aria-live="polite"></div></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="0712 345 678"><div class="err" aria-live="polite"></div></div>
+     <div class="f"><label for="service">Service needed</label><select id="service" name="service"><option value="">Select a service</option><option>Web development</option><option>Cybersecurity</option><option>AI solutions</option><option>Not sure yet</option></select><div class="err" aria-live="polite"></div></div>
+    </div>
+    <div class="f"><label for="msg">Project details <span class="cnt" id="cnt">0 / 500</span></label><textarea id="msg" name="msg" maxlength="500" placeholder="What are you trying to achieve, and by when?"></textarea><div class="err" aria-live="polite"></div></div>
+    <button class="btn" type="submit" id="sbtn" style="justify-content:center">Send message</button>
+   </form>
+   <div class="done" id="done"><h3>Message sent</h3><p style="color:var(--mut)">Thank you, <span id="dn"></span>. We’ll reply to your email within one working day.</p><button class="btn ghost" id="again">Send another message</button></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div>
+    <a href="#home" class="logo">Nexora</a>
+    <p style="margin-top:12px;max-width:300px">Web development, cybersecurity and AI for ambitious African businesses.</p>
+    <div class="soc">
+     <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></a>
+     <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.9 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a>
+     <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.100.7-1.400-2.200-.3-4.600-1.100-4.600-5 0-1.100.4-2 1-2.700-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.800 1a9.600 9.600 0 0 1 5 0c1.900-1.300 2.800-1 2.800-1 .5 1.400.2 2.400.1 2.700.6.7 1 1.600 1 2.700 0 3.900-2.400 4.700-4.600 5 .4.300.7.900.7 1.800v2.700c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a>
+     <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.800c0-.8.2-1.300 1.400-1.300H17V2.200C16.700 2.100 15.800 2 14.700 2 12.400 2 10.800 3.400 10.800 6v2.500H8V12h2.800v10H14V12h2.600l.4-3.500z"/></svg></a>
+     <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.500A4.500 4.500 0 1 1 7.500 12 4.500 4.500 0 0 1 12 7.500zm0 2A2.500 2.500 0 1 0 14.500 12 2.500 2.500 0 0 0 12 9.500zM17.500 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg></a>
+    </div>
+   </div>
+   <div><h4>Company</h4><ul><li><a href="#about">About us</a></li><li><a href="#why">Why Nexora</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h4>Services</h4><ul><li><a href="#services" data-open="0">Web development</a></li><li><a href="#services" data-open="1">Cybersecurity</a></li><li><a href="#services" data-open="2">AI solutions</a></li></ul></div>
+   <div><h4>Get in touch</h4><ul><li><a href="mailto:hello@nexora.co.ke">hello@nexora.co.ke</a></li><li><a href="tel:+254700000000">+254 700 000 000</a></li><li><a href="#contact">Westlands, Nairobi</a></li></ul></div>
+  </div>
+  <div class="legal"><span>© <span id="yr">2026</span> Nexora Technologies Ltd. All rights reserved.</span><span>Nexora is a fictional company created for demonstration.</span></div>
+ </div>
+</footer>
+<button id="top" aria-label="Back to top">&#8593;</button>
+<div class="toast" id="toast" role="status">Message sent successfully</div>
+
+<script>
+(function(){
+ var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+ $('#yr').textContent=new Date().getFullYear();
+ /* nav */
+ var hdr=$('#hdr'),menu=$('#menu'),burger=$('#burger'),topBtn=$('#top');
+ function setMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)}
+ burger.onclick=function(){setMenu(!menu.classList.contains('open'))};
+ $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+ var links=$$('.menu a.lnk'),secs=links.map(function(l){return $(l.getAttribute('href'))});
+ function onScroll(){
+  var y=window.scrollY;hdr.classList.toggle('solid',y>20);topBtn.classList.toggle('show',y>600);
+  var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<window.innerHeight*.4)cur=i});
+  links.forEach(function(l,i){l.classList.toggle('on',i===cur)});
+ }
+ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+ topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+ /* reveal + counters */
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');$$('[data-n]',e.target).forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+ $$('.rv').forEach(function(el){io.observe(el)});
+ function count(el){var t=parseFloat(el.dataset.n),d=+el.dataset.d||0,s=null;
+  function step(ts){s=s||ts;var p=Math.min((ts-s)/1400,1);el.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d)+(p===1&&t>=12&&!d?'+':'');if(p<1)requestAnimationFrame(step)}
+  requestAnimationFrame(step)}
+ /* tabs */
+ var tabs=$$('.tab'),panels=$$('.panel');
+ function openTab(i,focus){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i);t.tabIndex=k===i?0:-1});panels.forEach(function(p,k){p.hidden=k!==i;if(k===i){p.classList.remove('fade');void p.offsetWidth;p.classList.add('fade')}});if(focus)tabs[i].focus()}
+ tabs.forEach(function(t,i){t.onclick=function(){openTab(i)};t.onkeydown=function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();openTab((i+1)%3,1)}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();openTab((i+2)%3,1)}}});
+ openTab(0);
+ $$('[data-open]').forEach(function(a){a.addEventListener('click',function(){openTab(+a.dataset.open)})});
+ $$('[data-svc]').forEach(function(a){a.addEventListener('click',function(){$('#service').value=a.dataset.svc})});
+ /* terminal */
+ var lines=[['bl','$ nexora deploy --project mkopa-portal'],['','Building application ........ <span class="ok">done</span>'],['','Running 1,284 tests ......... <span class="ok">passed</span>'],['bl','$ nexora secure --scan'],['','Scanning dependencies ....... <span class="ok">0 critical</span>'],['','Hardening endpoints ........ <span class="ok">secured</span>'],['wn','AI assistant (EN / SW) ...... online'],['ok','Live in Nairobi. 38 ms response.']],tb=$('#tbody'),li=0,ci=0,cur;
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function render(n){tb.innerHTML=lines.slice(0,n).map(function(l){return '<div class="'+l[0]+'">'+l[1]+'</div>'}).join('')+'<span class="caret"></span>'}
+ if(reduce){render(lines.length)}else{(function tick(){if(li<lines.length){render(li);var d=document.createElement('div');li++;setTimeout(tick,li%3===1?900:520)}else{render(lines.length);setTimeout(function(){li=0;tick()},4200)}})()}
+ /* network canvas */
+ var cv=$('#net'),cx=cv.getContext('2d'),pts=[],W,H,mx=-999,my=-999;
+ function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=[];var n=Math.min(70,Math.floor(W*H/16000));for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+ size();window.addEventListener('resize',size);
+ cv.parentNode.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+ function draw(){cx.clearRect(0,0,W,H);
+  pts.forEach(function(p,i){if(!reduce){p.x+=p.vx;p.y+=p.vy}if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+   for(var j=i+1;j<pts.length;j++){var q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.strokeStyle='rgba(56,140,255,'+(.28*(1-d/130))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+   var dm=Math.hypot(p.x-mx,p.y-my);if(dm<170){cx.strokeStyle='rgba(56,214,255,'+(.6*(1-dm/170))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mx,my);cx.stroke()}
+   cx.fillStyle='#4aa3ff';cx.beginPath();cx.arc(p.x,p.y,1.8,0,6.3);cx.fill()});
+  if(!reduce)requestAnimationFrame(draw)}
+ draw();
+ /* form */
+ var f=$('#cf'),msg=$('#msg');
+ msg.addEventListener('input',function(){$('#cnt').textContent=msg.value.length+' / 500'});
+ var rules={
+  name:function(v){return v.trim().length<2?'Enter your full name.':/^[\p{L}][\p{L}\s'’.-]+$/u.test(v.trim())?'':'Use letters only in your name.'},
+  email:function(v){return !v.trim()?'Enter your email address.':/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())?'':'Enter a valid email, like name@company.co.ke.'},
+  phone:function(v){v=v.replace(/[\s-]/g,'');return !v||/^(\+?254|0)[17]\d{8}$/.test(v)?'':'Use a Kenyan number, like 0712 345 678 or +254 712 345 678.'},
+  service:function(v){return v?'':'Choose the service you need.'},
+  msg:function(v){return v.trim().length<20?'Write at least 20 characters so we can understand your project.':''}
+ };
+ function check(el){var m=rules[el.name](el.value),w=el.closest('.f');w.classList.toggle('bad',!!m);$('.err',w).textContent=m;el.setAttribute('aria-invalid',!!m);return !m}
+ $$('input,select,textarea',f).forEach(function(el){el.addEventListener('blur',function(){check(el)});el.addEventListener('input',function(){if(el.closest('.f').classList.contains('bad'))check(el)})});
+ f.addEventListener('submit',function(e){e.preventDefault();var bad=$$('input,select,textarea',f).filter(function(el){return !check(el)});
+  if(bad.length){bad[0].focus();return}
+  var b=$('#sbtn');b.disabled=true;b.textContent='Sending...';
+  setTimeout(function(){$('#dn').textContent=$('#name').value.trim().split(' ')[0];f.style.display='none';$('#done').classList.add('show');b.disabled=false;b.textContent='Send message';var t=$('#toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3200)},900)});
+ $('#again').onclick=function(){f.reset();$('#cnt').textContent='0 / 500';f.style.display='';$('#done').classList.remove('show')};
+})();
+</script>
+</body>
+</html>
