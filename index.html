@@ -466,12 +466,49 @@ footer li a:hover{color:var(--cyan)}
  };
  function check(el){var m=rules[el.name](el.value),w=el.closest('.f');w.classList.toggle('bad',!!m);$('.err',w).textContent=m;el.setAttribute('aria-invalid',!!m);return !m}
  $$('input,select,textarea',f).forEach(function(el){el.addEventListener('blur',function(){check(el)});el.addEventListener('input',function(){if(el.closest('.f').classList.contains('bad'))check(el)})});
- f.addEventListener('submit',function(e){e.preventDefault();var bad=$$('input,select,textarea',f).filter(function(el){return !check(el)});
-  if(bad.length){bad[0].focus();return}
-  var b=$('#sbtn');b.disabled=true;b.textContent='Sending...';
-  setTimeout(function(){$('#dn').textContent=$('#name').value.trim().split(' ')[0];f.style.display='none';$('#done').classList.add('show');b.disabled=false;b.textContent='Send message';var t=$('#toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3200)},900)});
- $('#again').onclick=function(){f.reset();$('#cnt').textContent='0 / 500';f.style.display='';$('#done').classList.remove('show')};
-})();
-</script>
-</body>
-</html>
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  var bad=$$('input,select,textarea',f).filter(function(el){
+    return !check(el);
+  });
+
+  if(bad.length){
+    bad[0].focus();
+    return;
+  }
+
+  var b=$('#sbtn');
+  b.disabled=true;
+  b.textContent='Sending...';
+
+  fetch('https://formspree.io/f/xgakkrwk',{
+    method:'POST',
+    body:new FormData(f),
+    headers:{
+      'Accept':'application/json'
+    }
+  })
+  .then(function(response){
+    if(!response.ok){
+      throw new Error('Message could not be sent');
+    }
+
+    $('#dn').textContent=$('#name').value.trim().split(' ')[0];
+    f.style.display='none';
+    $('#done').classList.add('show');
+
+    var t=$('#toast');
+    t.classList.add('show');
+    setTimeout(function(){
+      t.classList.remove('show');
+    },3200);
+  })
+  .catch(function(){
+    alert('Sorry, your message could not be sent. Please try again.');
+  })
+  .finally(function(){
+    b.disabled=false;
+    b.textContent='Send message';
+  });
+});
